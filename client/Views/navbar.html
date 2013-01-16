@@ -1,0 +1,10 @@
+<template name="navbar">
+  <div>
+    {{loginButtons}}
+  </div>
+  <div>
+    {{#each navs}}
+      <a href="{{url}}">{{title}}</a> |
+    {{/each}}
+  </div>
+</template>

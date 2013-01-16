@@ -1,5 +1,7 @@
 {
   "packages": {
-    "jade-handlebars": {}
+    "jade-handlebars": {},
+    "blade": {},
+    "router": {}
   }
 }

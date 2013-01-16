@@ -5,11 +5,14 @@
 
 insecure
 preserve-inputs
-jade-handlebars
 accounts-base
 accounts-password
 underscore
 coffeescript
 accounts-facebook
-accounts-ui-unstyled
 jquery
+accounts-ui
+autopublish
+jade-handlebars
+router
+bootstrap
