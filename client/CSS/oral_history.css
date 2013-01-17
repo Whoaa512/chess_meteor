@@ -1,4 +1,9 @@
 /* CSS declarations go here */
-div.container {
-  margin: 20%;
+body {
+  margin-left: 5%;
+  margin-top: 2%;
 }
+
+div.container {
+}
+

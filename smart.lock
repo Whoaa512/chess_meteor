@@ -8,7 +8,8 @@
     "basePackages": {
       "jade-handlebars": {},
       "blade": {},
-      "router": {}
+      "router": {},
+      "headly": {}
     },
     "packages": {
       "jade-handlebars": {
@@ -26,10 +27,20 @@
         "tag": "v0.3.4",
         "commit": "8f0d5303de5b93771e91f21f818be27358c2fb30"
       },
+      "headly": {
+        "git": "https://github.com/ayal/headly",
+        "tag": "v0.0.3",
+        "commit": "db311ffe2b071217030b81f6528d18eba3911b24"
+      },
       "page-js": {
         "git": "https://github.com/tmeasday/meteor-page-js.git",
         "tag": "v1.3.1",
         "commit": "ee0b651869928abe50b5d06d7f32ccd2e657883a"
+      },
+      "deps-extensions": {
+        "git": "https://github.com/tmeasday/meteor-deps-extensions.git",
+        "tag": "v0.1.0",
+        "commit": "110462c0ba33aaeb35e55069134287325cc453e5"
       }
     }
   }

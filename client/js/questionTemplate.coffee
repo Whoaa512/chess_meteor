@@ -1,3 +1,3 @@
 questionInit = ->
-  Template.questions.question = ->
+  Template.questions_list.question = ->
     Questions.find()

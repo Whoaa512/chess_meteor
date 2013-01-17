@@ -2,6 +2,7 @@
   "packages": {
     "jade-handlebars": {},
     "blade": {},
-    "router": {}
+    "router": {},
+    "headly": {}
   }
 }
