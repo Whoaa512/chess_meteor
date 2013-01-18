@@ -16,16 +16,25 @@ Meteor.startup( ->
 
   # defined in share_resources.coffee
   accountsInit()
+
+  # during new account creation get user picture from facebook and save in user object
+  Accounts.onCreateUser (options, user) ->
+    if (options.profile)
+      options.profile.picture = getFbPicture( user.services.facebook.accessToken )
+
+      # We still want the default hook's 'profile' behavior.
+      user.profile = options.profile;
+    return user
+
+
+  getFbPicture = (accessToken) ->
+    result = Meteor.http.get "https://graph.facebook.com/me",
+      params:
+        access_token: accessToken
+        fields: 'picture'
+
+    if(result.error)
+      throw result.error
+
+    return result.data.picture.data.url
 )
-
-Meteor.methods
-  getFbPicture : ->
-    fut = new Future()
-    fut.ret(Meteor.http.get("https://graph.facebook.com/me",
-          params:
-            access_token: Meteor.user().services.facebook.accessToken
-            fields: 'picture',
-          (err, res) -> res.content.picture.data.url))
-    fut.wait()
-
-    ## figure out futures!!!!!!!!! and get my FB PIC
