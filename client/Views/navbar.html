@@ -1,10 +1,15 @@
 <template name="navbar">
   <div>
-    {{loginButtons}}
+    {{> fb_pic}} | {{loginButtons}}
   </div>
   <div>
     {{#each navs}}
       <a href="{{url}}">{{title}}</a> |
     {{/each}}
   </div>
+</template>
+
+
+<template name='fb_pic'>
+  <img src="{{pic}}">
 </template>

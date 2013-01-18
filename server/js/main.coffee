@@ -14,14 +14,18 @@ Meteor.startup( ->
     'nav_list',
     -> navList.find {}, {fields: {'title':1, 'url':1}} )
 
-  if !Accounts.loginServicesConfigured
-    Accounts.loginServiceConfiguration
-      .remove
-        service: "facebook"
-
-    Accounts.loginServiceConfiguration
-      .insert
-        service: "facebook"
-        appId: "291275310995056"
-        secret: "22647284cca9d55b326c1497ad8a1dee"
+  # defined in share_resources.coffee
+  accountsInit()
 )
+
+Meteor.methods
+  getFbPicture : ->
+    fut = new Future()
+    fut.ret(Meteor.http.get("https://graph.facebook.com/me",
+          params:
+            access_token: Meteor.user().services.facebook.accessToken
+            fields: 'picture',
+          (err, res) -> res.content.picture.data.url))
+    fut.wait()
+
+    ## figure out futures!!!!!!!!! and get my FB PIC
