@@ -1,6 +1,6 @@
 <template name="navbar">
   <div>
-    {{> fb_pic}} | {{loginButtons}}
+    {{> fb_pic}} {{loginButtons}}
   </div>
   <div>
     {{#each navs}}
@@ -11,5 +11,7 @@
 
 
 <template name='fb_pic'>
-  <img src="{{pic}}">
+  {{#if user}}
+    <img src="{{pic}}"> |
+  {{/if}}
 </template>
