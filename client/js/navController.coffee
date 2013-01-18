@@ -8,4 +8,4 @@ navInit = ->
     if x
       x.picture
     else
-      console.log("asdf")
+      console.log("Not logged in, no picture to load.")
