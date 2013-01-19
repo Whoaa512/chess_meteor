@@ -22,7 +22,7 @@ var fbSdkLoader = function() {
       // Sync Facebook login status with this app login status (automatically logging in if necessary).
       FB.getLoginStatus(function(response) {
         if(response.status === 'connected') {
-          Facebook.login(response.authResponse.accessToken);
+          Session.set('accessToken', response.authResponse.accessToken);
         } else if(response.status === 'not_authorized') {
           // not_authorized
         } else {
