@@ -4,3 +4,4 @@ tmp Buffer
 .DS_Store
 shared_resources.coffee
 ask_request.html
+askController.coffee
