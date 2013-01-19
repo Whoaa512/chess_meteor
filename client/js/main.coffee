@@ -7,7 +7,6 @@ Meteor.startup ->
   Meteor.Router.add
     '/'           : 'homePage'
     '/questions'  : 'questions_list'
-    '/ask'        : 'ask_req'
     '*'           : 'not_found'
 
   fbSdkLoader()
