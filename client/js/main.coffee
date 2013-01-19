@@ -10,6 +10,7 @@ Meteor.startup ->
     '/ask'        : 'ask_req'
     '*'           : 'not_found'
 
+  fbSdkLoader()
   navInit()
   questionInit()
   Meteor.Router.to '/'
